@@ -27,6 +27,7 @@ class ApiController extends Controller
             $book->published_year = $request -> input('published_year');
             $book->save();
 
+            return response()->json($book,201);
         }catch(\Exception $e){
             return response()->json(['error'=>'Error'], 500);
         }
