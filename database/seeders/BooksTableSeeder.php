@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class BooksTableSeeder extends Seeder
 {
@@ -12,6 +13,15 @@ class BooksTableSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        DB::table('books')->insert([
+            'tittle' => 'El gran Gatsby',
+            'published_year' => 1925
+        ]);
+
+        DB::table('books')->insert([
+            'tittle' => 'Cien años de soledad',
+            'published_year' => 1967
+        ]);
+
     }
 }
