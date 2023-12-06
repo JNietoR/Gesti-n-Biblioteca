@@ -1,15 +1,15 @@
 <template>
     <div class="flex justify-center items-center">
         <form @submit.prevent="login" class="bg-white shadow-md rounded p-8">
-            <div>
-                <label for="">Email</label>
+            <div class="mb-4">
+                <label for="" class="mr-2">Email</label>
                 <input v-model="email" type="email" id="email" placeholder="Correo electrónico">
             </div>
-            <div>
-                <label for="">Password</label>
+            <div class="mb-4">
+                <label for="" class="mr-2">Password</label>
                 <input v-model="password" type="password" id="password" placeholder="Contraseña">
             </div>
-            <button type="submit" class="bg-blue-500 text-white font-bold p-8">
+            <button type="submit" class="bg-blue-500 text-white font-bold p-2">
                 Login
             </button>
         </form>
