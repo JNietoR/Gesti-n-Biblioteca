@@ -32,4 +32,16 @@ class ApiController extends Controller
             return response()->json(['error'=>'Error'], 500);
         }
     }
+
+    public function destroy($id){
+        $book = Books::find($id);
+
+        if(!$book){
+            return response()->json(['message'=>'Este libro no esta'],404);
+        }
+        else{
+            $book->delete();
+            return response()->json(['message'=>'Libro eliminado'],200);
+        }
+    }
 }

@@ -22,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/libros', [ApiController::class, 'index']);
 Route::post('libros', [ApiController::class, 'store']);
+Route::delete('/libros/{id}', [ApiController::class, 'destroy']);
