@@ -14,12 +14,12 @@ class BooksTableSeeder extends Seeder
     public function run(): void
     {
         DB::table('books')->insert([
-            'tittle' => 'El gran Gatsby',
+            'title' => 'El gran Gatsby',
             'published_year' => 1925
         ]);
 
         DB::table('books')->insert([
-            'tittle' => 'Cien años de soledad',
+            'title' => 'Cien años de soledad',
             'published_year' => 1967
         ]);
 
