@@ -13,13 +13,13 @@
     export default{
         data(){
             return{
-                books:[],
+                books: [],
             }
         },
         mounted(){
             fetch('api/libros')
-            .then((response) => response.json)
-            .then((data) =>{
+                .then((response) => response.json())
+                .then((data) =>{
                 this.books = data;
             })
         }
