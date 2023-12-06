@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-module.export = {
+
+module.exports = {
   content: [
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
