@@ -9,7 +9,7 @@
         @vite('resources/css/app.css')
 
     </head>
-    <body class="">
+    <body>
         <div id="app">
 
         </div>
