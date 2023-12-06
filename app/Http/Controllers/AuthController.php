@@ -53,10 +53,14 @@ class AuthController extends Controller
            ]);
         }
         else{
-            return response()->json([]);
+            return response()->json(['message' => 'Usuario no autenticado'], 401);
         }
 
     }
 
+    public function logout(){
+        Auth::logout();
+        return response()->json(['message' => 'Ha salido correctamente']);
+    }
 
 }
