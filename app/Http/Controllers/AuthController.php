@@ -34,10 +34,11 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if(Auth::attempt($credentials)){
+
             $user = Auth::user();
             $token = $user->createToken('authToken')->plainTextToken;
-            return response()->json(['message' => 'Login OK', 'token' => $token],200);
 
+            return response()->json(['message' => 'Login OK', 'token' => $token],200);
         }else{
             return response()->json(['message' => 'Login Error'], 401);
         }
