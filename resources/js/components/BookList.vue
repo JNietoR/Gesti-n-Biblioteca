@@ -4,12 +4,16 @@
         <ul>
             <li v-for="book in books" :key="book.id">
             {{ book.title }}
+            <button @click="addFavorito(book.id)" class="px-3 py-1 ml-2 bg-blue-500 hover:bg-blue-700 text-white rounded">
+                 Add Fav
+            </button>
             </li>
         </ul>
     </div>
 </template>
 
 <script>
+import Cookies from 'js-cookie';
     export default{
         data(){
             return{
@@ -22,6 +26,28 @@
                 .then((data) =>{
                 this.books = data;
             })
+        },
+        methods: {
+            addFavorito(id){
+                let favorites = Cookies.get('favorites');
+                if(!favorites){
+                    favprotes = '[]';
+                }
+                //convertir a json
+                favorites = JSON.parse(favorites);
+                //agregar nuevo favorito
+                if(!favorites.includes(id)){
+                    favorites.push(id);
+
+                    Cookies.set('favorites', JSON.stringify(favorites), {expires : 30});
+                }
+
+                //actualizar variable de favoritos
+
+                this.favorites = favorites;
+
+                console.log(favorites);
+            }
         }
     }
 </script>
